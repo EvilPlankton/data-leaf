@@ -1,0 +1,104 @@
+<div data-ng-controller="LeafsController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top"><i class="glyphicon glyphicon-leaf"></i> DATA LEAF</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    <li class="page-scroll" data-ng-show="!authentication.user">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li class="page-scroll" data-ng-show="!authentication.user">
+                        <a href="/register">Register</a>
+                    </li>
+                    <li class="page-scroll" data-ng-show="authentication.user">
+                        <a href="/#!/leafs">Leaf List</a>
+                    </li>
+                    <li class="page-scroll" data-ng-show="authentication.user">
+                        <a href="/logout">Hello <span data-ng-bind="authentication.user.name" data-ng-show="authentication.user"></span>, Logout?</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+        <h1>New Leaf</h1>
+        <form role="form" data-ng-submit="create()" novalidate>
+            <div class="row form-group">
+                <label for="name" class="sr-only">Leaf Name</label>
+                <div class="col-lg-4">
+                    <input type="text" data-ng-model="name" id="name" placeholder="Leaf Name" required autofocus class="form-control better-placeholder">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="host" class="sr-only">DSN Host</label>
+                <div class="col-lg-4">
+                    <input type="text" data-ng-model="dsnhost" id="host" placeholder="Host" required autofocus class="form-control better-placeholder">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="port" class="sr-only">DSN Port</label>
+                <div class="col-lg-4">
+                    <input type="number" min="0" data-ng-model="dsnport" id="port" placeholder="Port" required autofocus class="form-control better-placeholder">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="user" class="sr-only">DSN Username</label>
+                <div class="col-lg-4">
+                    <input type="text" data-ng-model="dsnuser" id="user" placeholder="User" required autofocus class="form-control better-placeholder">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="pwd" class="sr-only">DSN Password</label>
+                <div class="col-lg-4">
+                    <input type="password" data-ng-model="dsnpwd" id="pwd" placeholder="Password" required autofocus class="form-control better-placeholder">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="dbname" class="sr-only">DSN DB Name</label>
+                <div class="col-lg-4">
+                    <input type="text" data-ng-model="dsndbname" id="dbname" placeholder="Database Name" required autofocus class="form-control better-placeholder">
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="dbtype" class="sr-only">DSN DB Type</label>
+                <div class="col-lg-4">
+                    <select id="dbtype" class="form-control" data-ng-model="dsndbtype" ng-init="dsndbtype='pg'">
+                        <option value="pg">Postgres</option>
+                        <option value="mysql">MySQL</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label for="sql" class="sr-only">SQL</label>
+                <div class="col-lg-4">
+                    <textarea data-ng-model="query" id="sql" cols="30" rows="10" placeholder="SQL Query" required class="form-control better-placeholder"></textarea>
+                </div>
+            </div>
+
+            <div class="row col-lg-4">
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Create LEAF</button>
+            </div>
+            <div data-ng-show="error">
+                <strong data-ng-bind="error"></strong>
+            </div>
+        </form>
+    </div>
+</div>

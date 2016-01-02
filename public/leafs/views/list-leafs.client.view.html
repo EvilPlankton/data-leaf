@@ -1,0 +1,76 @@
+<div data-ng-controller="LeafsController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top"><i class="glyphicon glyphicon-leaf"></i> DATA LEAF</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    <li class="page-scroll" data-ng-show="!authentication.user">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li class="page-scroll" data-ng-show="!authentication.user">
+                        <a href="/register">Register</a>
+                    </li>
+
+                    <li class="page-scroll" data-ng-show="authentication.user">
+                        <a href="/#!/leafs/create">New Leaf</a>
+                    </li>
+                    <li class="page-scroll" data-ng-show="authentication.user">
+                        <a href="/logout">Hello <span data-ng-bind="authentication.user.name" data-ng-show="authentication.user"></span>, Logout?</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section data-ng-show="!authentication.user">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Please Login</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section data-ng-init="find()" data-ng-show="authentication.user">
+        <div class="container">
+            <h3>Leaf List</h3>
+            <ul class="list-group">
+                <li data-ng-repeat="leaf in leafs" class="list-group-item clearfix">
+                    <div>
+                    <a class="btn btn-success" data-ng-href="/exec/{{leaf._id}}" target="_blank"><i class="glyphicon glyphicon-leaf"></i> <span data-ng-bind="leaf.name"></span></a>
+                    <span class="pull-right button-group">
+                        {{leaf.created | date:'medium'}}
+                        <a href="/#!/leafs/{{leaf._id}}/edit" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a href="#" class="btn btn-default" data-ng-click="copy(leaf);"><i class="glyphicon glyphicon-duplicate"></i> Duplicate</a>
+                        <button class="btn btn-default" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}"><i class="glyphicon glyphicon-copy"></i> Copy Link</button>
+                        <a href="#" class="btn btn-default" data-ng-click="delete(leaf);"><i class="glyphicon glyphicon-remove"></i></a>
+                    </span>
+                    </div>
+                    <br>
+                    <pre><small data-ng-bind="leaf.query" class="comment"></small></pre>
+                </li>
+            </ul>
+            <div data-ng-hide="!leafs || leafs.length">
+                No leaf yet, why don't you <a href="/#!/leafs/create">create one</a>?
+            </div>
+        </div>
+    </section>
+</div>

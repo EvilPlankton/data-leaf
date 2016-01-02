@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Jason Drapala">
+
+    <title>Data Leaf</title>
+
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/components/angular-better-placeholders/src/angular-better-placeholders.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body ng-app="leaf" style="padding-top: 70px">
+
+    <section ng-view class="main-section"></section>
+
+    <script type="text/javascript">
+        window.user = <%- user || 'null' %>;
+    </script>
+
+    <script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/components/angular-better-placeholders/src/angular-better-placeholders.js"></script>
+    <script type="text/javascript" src="/components/clipboard/dist/clipboard.min.js"></script>
+    <script type="text/javascript" src="/components/ngclipboard/dist/ngclipboard.min.js"></script>
+    
+	<script type="text/javascript" src="/leafs/leafs.client.module.js"></script>
+	<script type="text/javascript" src="/leafs/controllers/leafs.client.controller.js"></script>
+	<script type="text/javascript" src="/leafs/services/leafs.client.service.js"></script>
+	<script type="text/javascript" src="/leafs/config/leafs.client.routes.js"></script>
+	
+    <script type="text/javascript" src="/users/users.client.module.js"></script>
+    <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+
+    <script type="text/javascript" src="/application.js"></script>
+</body>
+</html>
