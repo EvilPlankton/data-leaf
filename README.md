@@ -1,4 +1,4 @@
-# :herb: Data Leaf - **_Dynamic data sharing made simple._**
+# :herb: Data Leaf - *_Dynamic data sharing made simple._*
 
 The Data Leaf app allows users to share results of SQL queries by associating them with a URL that can be easily shared and embedded into reports, spreadsheet and dashboards. When the URL is requested, the query is executed and results returned in CSV format.
 
