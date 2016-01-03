@@ -9,7 +9,7 @@
 
     <title>Data Leaf</title>
 
-    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/components/angular-better-placeholders/src/angular-better-placeholders.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -30,40 +30,43 @@
 				<% } %>
 				<form role="form" action="/register" method="post">
 		        	<h2>Please Register</h2>
-		       
+
 		          <div class="row form-group">
                     <div class="col-lg-4">
 			        <label for="username" class="sr-only">Username</label>
 			        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
                     </div>
                     </div>
-                    
+
                     <div class="row form-group">
                     <div class="col-lg-4">
 			        <label for="name" class="sr-only">Name</label>
 			        <input type="text" id="name" name="name" class="form-control" placeholder="Name" required autofocus>
                     </div>
                     </div>
-                    
+
                     <div class="row form-group">
                     <div class="col-lg-4">
 			        <label for="email" class="sr-only">E-mail</label>
 			        <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required>
 			        </div>
 			        </div>
-			        
+
 			        <div class="row form-group">
                     <div class="col-lg-4">
 			        <label for="password" class="sr-only">Password</label>
 			        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 			        </div>
 			        </div>
-			        
+
 			        <div class="row">
 			             <div class="col-lg-4">
 			        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
 			        </div>
 			        </div>
+							<div class="row col-lg-4 text-center">
+								<a href="/login">Already have an account? Login here</a>
+							</div>
 		      	</form>
 
 		      	<br>
@@ -74,7 +77,7 @@
 						<a href="/oauth/twitter">Login with Twitter</a>
 					</div>
 				</div> -->
-		    </div>		    
+		    </div>
 
     <script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -84,12 +87,12 @@
     <script type="text/javascript" src="/components/angular-better-placeholders/src/angular-better-placeholders.js"></script>
     <script type="text/javascript" src="/components/clipboard/dist/clipboard.min.js"></script>
     <script type="text/javascript" src="/components/ngclipboard/dist/ngclipboard.min.js"></script>
-    
+
 	<script type="text/javascript" src="/leafs/leafs.client.module.js"></script>
 	<script type="text/javascript" src="/leafs/controllers/leafs.client.controller.js"></script>
 	<script type="text/javascript" src="/leafs/services/leafs.client.service.js"></script>
 	<script type="text/javascript" src="/leafs/config/leafs.client.routes.js"></script>
-	
+
 	<script type="text/javascript" src="/users/users.client.module.js"></script>
 	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
 

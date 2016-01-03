@@ -9,7 +9,7 @@
 
     <title>Data Leaf</title>
 
-    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/components/angular-better-placeholders/src/angular-better-placeholders.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -30,29 +30,33 @@
 			<% } %>
 			<form class="form-signin" action="/login" method="post">
 	        	<h2 class="form-signin-heading">Please login</h2>
-	        	
+
                 <div class="row form-group">
                     <div class="col-lg-4">
 		        <label for="username" class="sr-only">Username</label>
 		        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus />
 		            </div>
                 </div>
-                
+
                 <div class="row form-group">
                     <div class="col-lg-4">
 		        <label for="password" class="sr-only">Password</label>
 		        <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
 		            </div>
                 </div>
-                
+
                 <div class="row">
-                    <div class="col-lg-4">
-		        <button class="btn btn-primary btn-block" type="submit">Login</button>
+                <div class="col-lg-4">
+		        			<button class="btn btn-primary btn-block" type="submit">Login</button>
 		            </div>
-		        </div>
+		        		</div>
+								<div class="row col-lg-4 text-center">
+									<a href="/register">No Account? Register Here</a>
+								</div>
 	      	</form>
 
 	      	<br>
+
 	      	<!-- No OAUTH for me
 		      	<div class="row">
 				    <div class="col-lg-4 text-center">
@@ -61,7 +65,7 @@
 					</div>
 				</div> -->
 			</div>
-		    
+
         </div>
 
     <script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
@@ -72,12 +76,12 @@
     <script type="text/javascript" src="/components/angular-better-placeholders/src/angular-better-placeholders.js"></script>
     <script type="text/javascript" src="/components/clipboard/dist/clipboard.min.js"></script>
     <script type="text/javascript" src="/components/ngclipboard/dist/ngclipboard.min.js"></script>
-    
+
 	<script type="text/javascript" src="/leafs/leafs.client.module.js"></script>
 	<script type="text/javascript" src="/leafs/controllers/leafs.client.controller.js"></script>
 	<script type="text/javascript" src="/leafs/services/leafs.client.service.js"></script>
 	<script type="text/javascript" src="/leafs/config/leafs.client.routes.js"></script>
-	
+
 	<script type="text/javascript" src="/users/users.client.module.js"></script>
 	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
 

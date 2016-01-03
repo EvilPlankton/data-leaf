@@ -41,14 +41,25 @@
 
     <section data-ng-show="!authentication.user">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Please Login</h2>
+                <div class="row">
+                <div class="center-block text-center">
+                    <h2>Welcome</h2>
                 </div>
-            </div>
-        </div>
+              </div>
+              <div class="row">
+                <div class="center-block col-lg-4 text-center" style="float: none;">
+                    The Data Leaf app allows users to share results of SQL queries by associating them with a URL that can be easily shared and embedded into reports, spreadsheet and dashboards.
+                    When the URL is requested, the query is executed and results returned in CSV format.
+                </div>
+              </div>
+              <div class="row">
+                <div class="center-block col-lg-4 text-center" style="float: none;">
+                  <a href="/login" class="btn btn-primary">Login to Get Started</a>
+                </div>
+              </div>
+                </div>
     </section>
-    
+
     <section data-ng-init="find()" data-ng-show="authentication.user">
         <div class="container">
             <h3>Leaf List</h3>
