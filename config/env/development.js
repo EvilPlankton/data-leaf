@@ -1,8 +1,8 @@
-var port = process.env.PORT;
+var port = 3000;
 
 module.exports = {
 	port: port,
-	db: 'mongodb://' + process.env.IP + '/leafs',
+	db: 'mongodb://localhost/leafs',
 	facebook: {
 		clientID: 'insertyourclientidhere',
 		clientSecret: 'insertyoursecrethere',

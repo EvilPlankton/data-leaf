@@ -60,7 +60,7 @@ $ npm install data-leaf
 
 Set ENV variable for document encryption secret key <— Do NOT lose this key
 ```sh
-$ SK=someUnguessableString
+$ export SK=someUnguessableString
 ```
 
 Start the server
@@ -81,14 +81,13 @@ http://localhost:3000
 
 ### Special Thanks
 
- - Cloud9 - The Online IDE that changed everything for me
+ - Cloud9 - Online IDE set me free
 
 License
 ----
 
 MIT
 
-[//]:
 
    [node.js]: <http://nodejs.org>
    [Bootstrap]: <http://twitter.github.com/bootstrap/>
