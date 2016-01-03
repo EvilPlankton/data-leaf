@@ -60,16 +60,16 @@ exports.leafByID = function(req, res, next, id) {
 exports.exec = function(req, res) {
 
     var dbWrapper = require('node-dbi').DBWrapper;
-        
+
     var leaf = req.leaf;
     var dsn = leaf.dsn;
 
-    var dbConnectionConfig = { 
+    var dbConnectionConfig = {
         'host': dsn.host,
         'user': dsn.user,
         'password': dsn.pwd,
         'database': dsn.dbname };
-    
+
     // Replace the adapter name with "mysql", "mysql-libmysqlclient", "sqlite3" or "pg" on the following line :
     dbWrapper = new dbWrapper( dsn.dbtype, dbConnectionConfig );
     dbWrapper.connect();
@@ -82,7 +82,7 @@ exports.exec = function(req, res) {
             //res.csv(result)
         }
     });
-    
+
 };
 
 exports.update = function(req, res) {
@@ -128,5 +128,12 @@ exports.hasAuthorization = function(req, res, next) {
             message: 'User is not authorized'
         });
     }
+    next();
+};
+
+exports.isLocal = function(req, res, next) {
+    var hostmachine = req.headers.host.split(':')[0];
+    if(hostmachine !== 'localhost')
+         return res.send(401);
     next();
 };
