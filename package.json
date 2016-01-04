@@ -41,6 +41,6 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.3",
     "pg": "~4.4.3",
-    "underscore": "^1.5.2"
+    "underscore": "1.5.x"
   }
 }
