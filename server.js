@@ -12,4 +12,4 @@ var db = mongoose(),
 app.listen(config.port);
 
 module.exports = app;
-console.log(process.env.NODE_ENV + ' server running at http://' + process.env.HOSTNAME + ':' + config.port);
+console.log(process.env.NODE_ENV + ' server running at http://localhost:' + config.port);

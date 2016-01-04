@@ -65,21 +65,26 @@ exports.exec = function(req, res) {
     var dsn = leaf.dsn;
 
     var dbConnectionConfig = {
-        'host': dsn.host,
+        'host': dsn.host + ':' + dsn.port,
         'user': dsn.user,
         'password': dsn.pwd,
         'database': dsn.dbname };
 
     // Replace the adapter name with "mysql", "mysql-libmysqlclient", "sqlite3" or "pg" on the following line :
     dbWrapper = new dbWrapper( dsn.dbtype, dbConnectionConfig );
-    dbWrapper.connect();
+    //dbWrapper.connect();
+    dbWrapper.connect( function (err) {
+      if (err) {
+        res.status(400).send('Connection error: ' + err);
+      }
+    })
 
     dbWrapper.fetchAll(leaf.query, [], function(err, result) {
         if (err) {
-            res.send('Oops');
+          res.status(400).send('Fetch error: ' + err);
         } else {
-            res.send('Here is some data in CSV format: ' + JSON.stringify(result));
-            //res.csv(result)
+          //res.send('Here is some data in CSV format: ' + JSON.stringify(result));
+          res.csv(result)
         }
     });
 

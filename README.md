@@ -68,14 +68,11 @@ $ node server.js
 Use the app
 http://localhost:3000
 
-### Configuring
+### Environment variables
 
-Environment variables
-
-NODE_ENV - Environment type (e.g. development)
-HOSTNAME - DNS name of server
-PORT - Port for server to listen
-SK - An unguessable string used as a secret key to encrypt documents
+NODE_ENV - Environment type (default 'development' is config/development.js)
+PORT - Port for server to listen (default 3000)
+SK - An unguessable string used as a secret key to encrypt documents (No default)
 
 ### Todos
 
