@@ -1,15 +1,17 @@
 {
   "name": "Data Leaf",
-  "version": "0.5.0",
-  "homepage": "",
   "authors": [
     "Jason Drapala <evilplankton@gmail.com>"
   ],
-  "description": "SQL results in CSV format via URL",
-  "main": "bower.json",
+  "description": "Dynamic data sharing made simple",
+  "main": "public/application.js",
   "moduleType": [
     "node"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EvilPlankton/data-leaf.git"
+  },
   "keywords": [
     "csv",
     "url",
@@ -34,6 +36,7 @@
     "angular-better-placeholders": "~0.3.0",
     "bootstrap": "~3.3.6",
     "jquery": "~2.1.4",
-    "ngclipboard": "~1.1.0"
+    "ngclipboard": "~1.1.0",
+    "font-awesome": "fontawesome#~4.5.0"
   }
 }

@@ -10,13 +10,6 @@ The Data Leaf app allows users to share results of SQL queries by associating th
   - Duplicate & Edit Leaf definitions for quick customization
   - The Data Leaf URL contains only the domain name and ID of the Leaf definition
 
-The Data Leaf project was created to enhance the process of sharing data between analysts with SQL expertise and folks interested in reports and dashboards, such as those in Senior Management, Finance or HR departments.
-
-Manual steps in the typical report-request process can be removed, and turn-around time for the report request can be considerably reduced and, in many cases, eliminated.
-
-### Version
-0.5.0
-
 ### Tech
 
 Data Leaf uses a number of open source projects to work properly:
@@ -31,7 +24,7 @@ Data Leaf uses a number of open source projects to work properly:
 * [mongoose] - ORM for node access to MongoDB
 * [mongoose-encryption] - encrypt documents/fields in MongoDB on the fly
 * [Passport] - For local user account support, authentication, and OAUTH support
-* [angular-better-placeholders] - Normal placeholders are short-lived
+* [angular-better-placeholders] - Maintains better placeholder visibility
 
 Supplemental Tech worth mentioning:
 
@@ -43,6 +36,7 @@ Supplemental Tech worth mentioning:
 * [mysql] - Node MySQL driver, required by node-dbi
 * [ejs] - Express rendering engine
 * [npm-check-updates] - Node package updater
+* [nodemon] - Node runner with automatic restarts
 
 ### Installation
 
@@ -58,7 +52,7 @@ Install package
 $ npm install data-leaf
 ```
 
-Set ENV variable for document encryption secret key <— Do NOT lose this key
+Set ENV variable for document encryption secret key <— *Do NOT lose this key*
 ```sh
 $ export SK=someUnguessableString
 ```
@@ -74,14 +68,14 @@ http://localhost:3000
 
 ### Todos
 
- - Write Tests
  - Move MongoDB credentials to env-specific config file
  - Add timeout for blocked/hung SQL requests
  - Add/test Google OATH strategy via Passport
+ - Dynamic Passport strategies on login/register pages
 
 ### Special Thanks
 
- - Cloud9 - Online IDE set me free
+ - [Cloud9] - Online IDE
 
 License
 ----
@@ -92,5 +86,20 @@ MIT
    [node.js]: <http://nodejs.org>
    [Bootstrap]: <http://twitter.github.com/bootstrap/>
    [jQuery]: <http://jquery.com>
-   [express]: <http://expressjs.com>
+   [Express]: <http://expressjs.com>
    [AngularJS]: <http://angularjs.org>
+   [node-dbi]: <https://github.com/DrBenton/Node-DBI>
+   [MongoDB]: <https://www.mongodb.com/>
+   [ngclipboard]: <https://sachinchoolur.github.io/ngclipboard/>
+   [mongoose]: <http://mongoosejs.com/>
+   [mongoose-encryption]: <https://www.npmjs.com/package/mongoose-encryption>
+   [Passport]: <http://passportjs.org/>
+   [angular-better-placeholders]: <http://dmackerman.github.io/angular-better-placeholders/#/>
+   [npm]: <https://www.npmjs.com/>
+   [bower]: <http://bower.io/>
+   [connect-flash]: <https://www.npmjs.com/package/connect-flash>
+   [pg]: <https://github.com/brianc/node-postgres>
+   [mysql]: <https://github.com/felixge/node-mysql>
+   [ejs]: <https://www.npmjs.com/package/ejs>
+   [npm-check-updates]: <https://www.npmjs.com/package/npm-check-updates>
+   [nodemon]: <http://nodemon.io/>
