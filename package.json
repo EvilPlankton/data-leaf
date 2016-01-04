@@ -1,6 +1,6 @@
 {
   "name": "data-leaf",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Dynamic data sharing made simple",
   "main": "server.js",
   "author": "Jason Drapala <evilplankton@gmail.com>",
