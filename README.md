@@ -16,7 +16,7 @@ Data Leaf uses a number of open source projects to work properly:
 
 * [AngularJS] - HTML enhanced for web apps!
 * [Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
+* [nodejs] - evented I/O for the backend
 * [Express] - fast node.js network app framework
 * [node-dbi] - Database package wrapper to support multiple RDBMS engines
 * [MongoDB] - JSON document data store
@@ -42,14 +42,17 @@ Supplemental Tech worth mentioning:
 
 Prerequisites:
 
-Node
-NPM
-Bower
-MongoDB
+* [nodejs]
+* [npm]
+* [bower]
+* [MongoDB]
 
-Install package
+Install the app
 ```sh
-$ npm install data-leaf
+$ git clone https://github.com/EvilPlankton/data-leaf.git
+$ cd data-leaf
+$ npm install
+$ bower install
 ```
 
 Set ENV variable for document encryption secret key <— *Do NOT lose this key*
@@ -59,12 +62,20 @@ $ export SK=someUnguessableString
 
 Start the server
 ```sh
-$ cd data-leaf
 $ node server.js
 ```
 
 Use the app
 http://localhost:3000
+
+### Configuring
+
+Environment variables
+
+NODE_ENV - Environment type (e.g. development)
+HOSTNAME - DNS name of server
+PORT - Port for server to listen
+SK - An unguessable string used as a secret key to encrypt documents
 
 ### Todos
 
@@ -83,7 +94,7 @@ License
 MIT
 
 
-   [node.js]: <http://nodejs.org>
+   [nodejs]: <http://nodejs.org>
    [Bootstrap]: <http://twitter.github.com/bootstrap/>
    [jQuery]: <http://jquery.com>
    [Express]: <http://expressjs.com>

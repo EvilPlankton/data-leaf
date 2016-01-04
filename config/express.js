@@ -32,15 +32,6 @@ module.exports = function() {
 	require('../app/routes/leafs.server.routes.js')(app);
 
 	app.use(express.static('./public'));
-	
-	app.all('/flash', function(req, res){
-  		req.flash('test', 'it worked');
-  		res.redirect('/test')
-	});
-
-	app.all('/test', function(req, res){
-  		res.send(JSON.stringify(req.flash('test')));
-	});
 
 	return app;
 };
