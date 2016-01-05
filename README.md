@@ -1,9 +1,10 @@
 # :herb: Data Leaf
 ### *_Dynamic data sharing made simple._*
 
-The Data Leaf app allows users to share results of SQL queries by associating them with a URL that can be easily shared and embedded into reports, spreadsheet and dashboards. When the URL is requested, the query is executed and results returned in CSV format.
+The Data Leaf app allows users to share results of SQL queries by associating them with a URL that can be easily shared and embedded into reports, spreadsheet and dashboards. When the URL is requested, the query is executed and results returned in the requested format.
 
-  - The Data Leaf URL can be embedded into Excel and Google Sheets
+  - The Data Leaf URL can be embedded into Excel, Google Sheets, Libre Office, etc.
+  - Multiple output formats JSON, CSV, HTML table, etc.
   - Lightweight interface
   - Supports Postgres and MySQL targets
   - Individual user accounts
@@ -70,16 +71,13 @@ http://localhost:3000
 
 ### Environment variables
 
-NODE_ENV - Environment type (default 'development' is config/development.js)
-PORT - Port for server to listen (default 3000)
-SK - An unguessable string used as a secret key to encrypt documents (No default)
+ - NODE_ENV - Environment type (default 'development' is config/development.js)
+ - PORT - Port for server to listen (default 3000)
+ - SK - An unguessable string used as a secret key to encrypt documents (No default)
 
-### Todos
+### Caveats
 
- - Move MongoDB credentials to env-specific config file
- - Add timeout for blocked/hung SQL requests
- - Add/test Google OATH strategy via Passport
- - Dynamic Passport strategies on login/register pages
+ - Google Sheets requires the Leaf URL be publicly accessible
 
 ### Special Thanks
 

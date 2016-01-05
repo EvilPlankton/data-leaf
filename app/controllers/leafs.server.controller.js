@@ -4,6 +4,8 @@ var mongoose = require('mongoose'),
 var csv = require('express-csv')
 var dbWrapper = require('node-dbi').DBWrapper;
 
+var jsonToHtmlTable = require('json-to-htmltable');
+
 var getErrorMessage = function(err) {
     if (err.errors) {
         for (var errName in err.errors) {
@@ -83,8 +85,15 @@ exports.exec = function(req, res) {
         if (err) {
           res.status(400).send('Fetch error: ' + err);
         } else {
-          //res.send('Here is some data in CSV format: ' + JSON.stringify(result));
-          res.csv(result)
+          if (req.query.format == 'json') {
+            res.send(result);
+          } else if (req.query.format == 'csv') {
+            res.csv(result);
+          } else if (req.query.format == 'html') {
+            res.send(jsonToHtmlTable(result));
+          } else {
+            res.send('SQL Results in ' + req.query.format + ' format: ' + JSON.stringify(result));
+          }
         }
     });
 
