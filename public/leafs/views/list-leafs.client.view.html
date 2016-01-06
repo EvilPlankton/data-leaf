@@ -66,14 +66,30 @@
             <h3>Leaf List</h3>
             <ul class="list-group">
                 <li data-ng-repeat="leaf in leafs" class="list-group-item clearfix">
-                    <div>
+                    <div ng-init="format=null;copied=false">
                     <a class="btn btn-success" data-ng-href="/exec/{{leaf._id}}" target="_blank"><i class="glyphicon glyphicon-leaf"></i> <span data-ng-bind="leaf.name"></span></a>
-                    <span class="pull-right button-group">
+                    <span class="pull-right">
                         {{leaf.created | date:'medium'}}
-                        <a href="/#!/leafs/{{leaf._id}}/edit" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                        <a href="#" class="btn btn-default" data-ng-click="copy(leaf);"><i class="glyphicon glyphicon-duplicate"></i> Duplicate</a>
-                        <button class="btn btn-default" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}"><i class="glyphicon glyphicon-copy"></i> Copy Link</button>
-                        <a href="#" class="btn btn-default" data-ng-click="delete(leaf);"><i class="glyphicon glyphicon-remove"></i></a>
+                        <a href="/#!/leafs/{{leaf._id}}/edit" class="btn btn-default" role="button"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a href="#" class="btn btn-default" data-ng-click="copy(leaf);" role="button"><i class="glyphicon glyphicon-duplicate"></i> Duplicate</a>
+                        <span class = "btn-group">
+                          <button class="btn btn-default" ng-click="copied = true" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}">
+
+                            <i class="glyphicon glyphicon-copy"></i> <span ng-show="copied">Copied!</span><span ng-show="!copied">Copy Link</span></button>
+
+                          <button type = "button" class = "btn btn-default dropdown-toggle" data-toggle = "dropdown" ng-click="copied = false" tabindex = "-1">
+                             <span class = "caret"></span>
+                             <span class = "sr-only">Toggle Dropdown</span>
+                          </button>
+
+                          <ul class = "dropdown-menu">
+                             <li><a href="" ng-click="copied = true" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}">HTML</a></li>
+                             <li><a href="" ng-click="copied = true" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}?format=csv">CSV</a></li>
+                             <li><a href="" ng-click="copied = true" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}?format=json">JSON</a></li>
+                             <li><a href="" ng-click="copied = true" ngclipboard data-clipboard-text="http://{{fullURL}}/exec/{{leaf._id}}?format=xml">XML</a></li>
+                          </ul>
+                        </span>
+                        <a href="#" class="btn btn-default" data-ng-click="delete(leaf);" role="button"><i class="glyphicon glyphicon-remove"></i></a>
                     </span>
                     </div>
                     <br>

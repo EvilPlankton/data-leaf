@@ -4,7 +4,7 @@
 The Data Leaf app allows users to share results of SQL queries by associating them with a URL that can be easily shared and embedded into reports, spreadsheet and dashboards. When the URL is requested, the query is executed and results returned in the requested format.
 
   - The Data Leaf URL can be embedded into Excel, Google Sheets, Libre Office, etc.
-  - Multiple output formats JSON, CSV, HTML table, etc.
+  - Multiple output formats JSON, CSV, HTML table, and XML
   - Lightweight interface
   - Supports Postgres and MySQL targets
   - Individual user accounts
@@ -83,7 +83,7 @@ http://localhost:3000
 
  - [Cloud9] - Online IDE
 
-License
+### License
 ----
 
 MIT

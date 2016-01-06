@@ -5,6 +5,7 @@ var csv = require('express-csv')
 var dbWrapper = require('node-dbi').DBWrapper;
 
 var jsonToHtmlTable = require('json-to-htmltable');
+var to_xml = require('xmljson').to_xml;
 
 var getErrorMessage = function(err) {
     if (err.errors) {
@@ -89,10 +90,11 @@ exports.exec = function(req, res) {
             res.send(result);
           } else if (req.query.format == 'csv') {
             res.csv(result);
-          } else if (req.query.format == 'html') {
-            res.send(jsonToHtmlTable(result));
+          } else if (req.query.format == 'xml') {
+            res.send(to_xml(result));
           } else {
-            res.send('SQL Results in ' + req.query.format + ' format: ' + JSON.stringify(result));
+            // default HTML format
+            res.send(jsonToHtmlTable(result));
           }
         }
     });
