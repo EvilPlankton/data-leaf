@@ -74,6 +74,8 @@ http://localhost:3000
  - NODE_ENV - Environment type (default 'development' is config/development.js)
  - PORT - Port for server to listen (default 3000)
  - SK - An unguessable string used as a secret key to encrypt documents (No default)
+ - MONGOHOST - hostname for MongoDB server (default localhost)
+ - MONGOPORT - port for MongoDB server (default 27017)
 
 ### Caveats
 

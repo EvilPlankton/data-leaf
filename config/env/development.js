@@ -1,16 +1,8 @@
 var port = process.env.PORT || 3000;
+var mongoHost = process.env.MONGOHOST || 'localhost';
+var mongoPort = process.env.MONGOPORT || 27017;
 
 module.exports = {
-	port: port,
-	db: 'mongodb://localhost/leafs',
-	facebook: {
-		clientID: 'insertyourclientidhere',
-		clientSecret: 'insertyoursecrethere',
-		callbackURL: 'http://' + process.env.IP +':'+ process.env.PORT +'/oauth/facebook/callback'
-	},
-	twitter: {
-		clientID: 'insertyourclientidhere',
-		clientSecret: 'insertyoursecrethere',
-		callbackURL: 'http://' + process.env.IP + ':' + process.env.PORT +'/oauth/twitter/callback'
-	}
+	port: port,  // Data Leaf server port
+	db: 'mongodb://' + mongoHost + ':' + mongoPort + '/leafs'
 };
