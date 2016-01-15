@@ -6,7 +6,7 @@ The Data Leaf app allows users to share results of SQL queries by associating th
   - The Data Leaf URL can be embedded into Excel, Google Sheets, Libre Office, etc.
   - Multiple output formats JSON, CSV, HTML table, and XML
   - Lightweight interface
-  - Supports Postgres and MySQL targets
+  - Supports PostgreSQL, MySQL, SQLite, MariaDB and MSSQL target databases
   - Individual user accounts
   - Duplicate & Edit Leaf definitions for quick customization
   - The Data Leaf URL contains only the domain name and ID of the Leaf definition
@@ -19,7 +19,7 @@ Data Leaf uses a number of open source projects to work properly:
 * [Bootstrap] - great UI boilerplate for modern web apps
 * [nodejs] - evented I/O for the backend
 * [Express] - fast node.js network app framework
-* [node-dbi] - Database package wrapper to support multiple RDBMS engines
+* [Sequelize] - Database ORM
 * [MongoDB] - JSON document data store
 * [ngclipboard] - Easy Angular access to the clipboard for copying the Data Leaf URL
 * [mongoose] - ORM for node access to MongoDB
@@ -33,8 +33,11 @@ Supplemental Tech worth mentioning:
 * [bower] - Client package manager
 * [connect-flash] - Passport/Express access to browser Flash area
 * [jQuery] - for Bootstrap support only
-* [pg] - Node Postgres driver, required by node-dbi
-* [mysql] - Node MySQL driver, required by node-dbi
+* [pg] - Node PostgreSQL driver, required by Sequelize
+* [pg-hstore] - JSON to/from hstore format, required by Sequelize
+* [mysql] - Node MySQL driver, required by Sequelize
+* [sqlite3] - Node SQLite driver, required by Sequelize
+* [tedious] - Node SQL Server driver, required by Sequelize
 * [ejs] - Express rendering engine
 * [npm-check-updates] - Node package updater
 * [nodemon] - Node runner with automatic restarts
@@ -73,7 +76,7 @@ http://localhost:3000
 
  - NODE_ENV - Environment type (default 'development' is config/development.js)
  - PORT - Port for server to listen (default 3000)
- - SK - An unguessable string used as a secret key to encrypt documents (No default)
+ - SK - An unguessable string used as a secret key to encrypt documents (default someUnguessableString)
  - MONGOHOST - hostname for MongoDB server (default localhost)
  - MONGOPORT - port for MongoDB server (default 27017)
 
@@ -96,7 +99,7 @@ MIT
    [jQuery]: <http://jquery.com>
    [Express]: <http://expressjs.com>
    [AngularJS]: <http://angularjs.org>
-   [node-dbi]: <https://github.com/DrBenton/Node-DBI>
+   [Sequelize]: <http://docs.sequelizejs.com/en/latest/>
    [MongoDB]: <https://www.mongodb.com/>
    [ngclipboard]: <https://sachinchoolur.github.io/ngclipboard/>
    [mongoose]: <http://mongoosejs.com/>

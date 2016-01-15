@@ -85,8 +85,11 @@
                 <label for="dbtype" class="sr-only">DSN DB Type</label>
                 <div class="col-lg-4">
                     <select id="dbtype" class="form-control" data-ng-model="leaf.dsn.dbtype">
-                        <option value="pg" ng-selected="leaf.dsn.dbtype == 'pg'">Postgres</option>
+                        <option value="postgres" ng-selected="leaf.dsn.dbtype == 'postgres'">Postgres</option>
                         <option value="mysql" ng-selected="leaf.dsn.dbtype == 'mysql'">MySQL</option>
+                        <option value="mariadb" ng-selected="leaf.dsn.dbtype == 'mariadb'">MariaDB</option>
+                        <option value="sqlite" ng-selected="leaf.dsn.dbtype == 'sqlite'">SqlLite</option>
+                        <option value="mssql" ng-selected="leaf.dsn.dbtype == 'mssql'">MSSQL</option>
                     </select>
                 </div>
             </div>

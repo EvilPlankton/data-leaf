@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Leaf = mongoose.model('Leaf');
 
 var csv = require('express-csv')
-var dbWrapper = require('node-dbi').DBWrapper;
+var Sequelize = require('sequelize');
 
 var jsonToHtmlTable = require('json-to-htmltable');
 var to_xml = require('xmljson').to_xml;
@@ -62,30 +62,15 @@ exports.leafByID = function(req, res, next, id) {
 
 exports.exec = function(req, res) {
 
-    var dbWrapper = require('node-dbi').DBWrapper;
-
     var leaf = req.leaf;
     var dsn = leaf.dsn;
 
-    var dbConnectionConfig = {
-        'host': dsn.host + ':' + dsn.port,
-        'user': dsn.user,
-        'password': dsn.pwd,
-        'database': dsn.dbname };
+    var sequelize = new Sequelize('postgres' + '://' + dsn.user + ':' + dsn.pwd + '@' + dsn.host + ':' + dsn.port + '/' + dsn.dbname);
+    //'postgres://user:pass@example.com:5432/dbname'
 
-    // Replace the adapter name with "mysql", "mysql-libmysqlclient", "sqlite3" or "pg" on the following line :
-    dbWrapper = new dbWrapper( dsn.dbtype, dbConnectionConfig );
-    //dbWrapper.connect();
-    dbWrapper.connect( function (err) {
-      if (err) {
-        res.status(400).send('Connection error: ' + err);
-      }
-    })
-
-    dbWrapper.fetchAll(leaf.query, [], function(err, result) {
-        if (err) {
-          res.status(400).send('Fetch error: ' + err);
-        } else {
+    // leaf.query
+    sequelize.query(leaf.query, { type: sequelize.QueryTypes.SELECT})
+      .then(function(result) {
           if (req.query.format == 'json') {
             res.send(result);
           } else if (req.query.format == 'csv') {
@@ -96,9 +81,11 @@ exports.exec = function(req, res) {
             // default HTML format
             res.send(jsonToHtmlTable(result));
           }
-        }
-    });
-
+    }).catch(function(error) {
+    // Ooops, do some error-handling
+    console.log('Query error: ' + error);
+    res.status(400).send(error);
+  })
 };
 
 exports.update = function(req, res) {
@@ -133,7 +120,7 @@ exports.delete = function(req, res) {
                 message: getErrorMessage(err)
             });
         } else {
-            res.json(leaf);
+            res.send('HELLO');
         }
     });
 };

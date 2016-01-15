@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     encrypt = require('mongoose-encryption'),
     Schema = mongoose.Schema;
 
-var secret = process.env.SK;
+var secret = process.env.SK || 'someUnguessableString';
 
 var LeafSchema = new Schema({
     dsn: { host: String, port: Number, user: String, pwd: String, dbname: String, dbtype: String },
