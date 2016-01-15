@@ -136,8 +136,10 @@ exports.hasAuthorization = function(req, res, next) {
 
 exports.isLocal = function(req, res, next) {
     var hostmachine = req.headers.host.split(':')[0];
-    if(hostmachine !== 'localhost') {
-         return res.sendStatus(401);
+    // OS X does not seem to pass process.env.HOSTNAME
+    if((hostmachine !== process.env.HOSTNAME) && (hostmachine !== 'localhost')) {
+        console.log('Access Denied: ' + JSON.stringify(req.headers) + 'on HOST ' + process.env.HOSTNAME + ' using ' + hostmachine);
+        return res.sendStatus(401);
     }
     next();
 };
