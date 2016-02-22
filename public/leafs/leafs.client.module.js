@@ -1,1 +1,1 @@
-angular.module('leafs', []);
+angular.module('leafs', [])
