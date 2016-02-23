@@ -1,3 +1,4 @@
+/* global angular */
 var appName = 'leaf'
 var app = angular.module(appName, ['ngResource', 'ngRoute', 'users', 'leafs', 'angularBetterPlaceholder', 'ngclipboard'])
 

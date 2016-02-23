@@ -1,5 +1,5 @@
-var users = require('../../app/controllers/users.server.controller'),
-  leafs = require('../../app/controllers/leafs.server.controller')
+var users = require('../../app/controllers/users.server.controller')
+var leafs = require('../../app/controllers/leafs.server.controller')
 
 module.exports = function (app) {
   app.route('/api/leafs')

@@ -1,9 +1,9 @@
-var config = require('./config'),
-  express = require('express'),
-  bodyParser = require('body-parser'),
-  passport = require('passport'),
-  flash = require('connect-flash'),
-  session = require('express-session')
+// var config = require('./config')
+var express = require('express')
+var bodyParser = require('body-parser')
+var passport = require('passport')
+var flash = require('connect-flash')
+var session = require('express-session')
 
 module.exports = function () {
   var app = express()

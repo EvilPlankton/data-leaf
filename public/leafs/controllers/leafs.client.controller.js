@@ -10,7 +10,7 @@ angular.module('leafs').controller('LeafsController', ['$scope', '$routeParams',
           user: this.dsnuser,
           pwd: this.dsnpwd,
           dbname: this.dsndbname,
-        dbtype: this.dsndbtype },
+          dbtype: this.dsndbtype },
         query: this.query,
         name: this.name
       })

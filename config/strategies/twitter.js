@@ -1,8 +1,8 @@
-var passport = require('passport'),
-  url = require('url'),
-  TwitterStrategy = require('passport-twitter').Strategy,
-  config = require('../config'),
-  users = require('../../app/controllers/users.server.controller')
+var passport = require('passport')
+// var  url = require('url')
+var TwitterStrategy = require('passport-twitter').Strategy
+var config = require('../config')
+var users = require('../../app/controllers/users.server.controller')
 
 module.exports = function () {
   passport.use(new TwitterStrategy({
