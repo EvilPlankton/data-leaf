@@ -1,3 +1,5 @@
+/* global angular, location */
+
 angular.module('leafs').controller('LeafsController', ['$scope', '$routeParams', '$location', 'Authentication', 'Leafs',
   function ($scope, $routeParams, $location, Authentication, Leafs) {
     $scope.authentication = Authentication

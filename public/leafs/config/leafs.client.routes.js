@@ -1,3 +1,4 @@
+/* global angular */
 angular.module('leafs').config(['$routeProvider',
   function ($routeProvider) {
     $routeProvider.when('/', {
