@@ -1,6 +1,10 @@
 # :herb: Data Leaf
 ### *_Dynamic data sharing made simple._*
 
+[![Build Status](https://travis-ci.org/EvilPlankton/data-leaf.svg?branch=master)](https://travis-ci.org/EvilPlankton/data-leaf)
+[![Dependency Status](https://david-dm.org/EvilPlankton/data-leaf.svg)](https://david-dm.org/EvilPlankton/data-leaf)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 The Data Leaf app allows users to share results of SQL queries by associating them with a URL that can be easily shared and embedded into reports, spreadsheet and dashboards. When the URL is requested, the query is executed and results returned in the requested format.
 
   - The Data Leaf URL can be embedded into Excel, Google Sheets, Libre Office, etc.
@@ -26,6 +30,7 @@ Data Leaf uses a number of open source projects to work properly:
 * [mongoose-encryption] - encrypt documents/fields in MongoDB on the fly
 * [Passport] - For local user account support, authentication, and OAUTH support
 * [angular-better-placeholders] - Maintains better placeholder visibility
+* [standard] - JS style linter
 
 Supplemental Tech worth mentioning:
 
@@ -115,3 +120,7 @@ MIT
    [npm-check-updates]: <https://www.npmjs.com/package/npm-check-updates>
    [nodemon]: <http://nodemon.io/>
    [Cloud9]: <https://c9.io/>
+   [standard]: <https://www.npmjs.com/package/standard>
+   [pg-hstore]: <https://www.npmjs.com/package/pg-hstore>
+   [sqlite3]: <https://www.npmjs.com/package/sqlite3>
+   [tedious]: <https://www.npmjs.com/package/tedious>
