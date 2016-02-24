@@ -1,6 +1,6 @@
 {
   "name": "data-leaf",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Dynamic data sharing made simple",
   "main": "server.js",
   "author": "Jason Drapala <evilplankton@gmail.com>",
@@ -50,5 +50,8 @@
     "tedious": "^1.13.2",
     "underscore": "~1.5.x",
     "xmljson": "^0.2.0"
+  },
+  "standard": {
+    "globals": [ "angular" ]
   }
 }

@@ -1,5 +1,3 @@
-/* global angular, location */
-
 angular.module('leafs').controller('LeafsController', ['$scope', '$routeParams', '$location', 'Authentication', 'Leafs',
   function ($scope, $routeParams, $location, Authentication, Leafs) {
     $scope.authentication = Authentication
@@ -25,7 +23,7 @@ angular.module('leafs').controller('LeafsController', ['$scope', '$routeParams',
     }
 
     $scope.find = function () {
-      $scope.fullURL = location.host
+      $scope.fullURL = location.host // eslint-disable-line no-undef
       $scope.leafs = Leafs.query()
     }
 
